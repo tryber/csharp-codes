@@ -1,10 +1,5 @@
-﻿//Entrada de Dados
-int Age = int.Parse(Console.ReadLine());
-decimal Average = decimal.Parse(Console.ReadLine());
-bool Permission = bool.Parse(Console.ReadLine());
-string Name = Console.ReadLine();
-
-Console.WriteLine(Age);
-Console.WriteLine(Average);
-Console.WriteLine(Permission);
-Console.WriteLine(Name);
+﻿//Exemplo de concatenação de Dados
+int Number = 10;
+string Name = "Trybe";
+Console.WriteLine("O valor da variável numero é: " + Number);
+Console.WriteLine("Eu sou um estudante " + Name + "!");
