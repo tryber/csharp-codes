@@ -1,21 +1,21 @@
-﻿//ENTRADA DE DADOS
-Console.WriteLine("Boas vindas ao programa 'Calcula Lâmpada'!");
-Console.WriteLine("Informe o nome do cômodo: ");
-string convenient = Console.ReadLine();
+﻿namespace namespaceExample;
 
-Console.WriteLine("Informe em metros a largura deste cômodo: ");
-decimal width = decimal.Parse(Console.ReadLine());
+//Criando um enum
+enum CardinalPoints
+{
+    Norte,
+    Sul,
+    Leste,
+    Oeste
+};
 
-Console.WriteLine("Informe em metros o comprimento deste cômodo: ");
-decimal length = decimal.Parse(Console.ReadLine());
+class Program
+{
+    public static void Main()
+    {
+        //Utilizando um enum
+        CardinalPoints direction = CardinalPoints.Norte;
+        Console.WriteLine("Ponto Cardeal: " + direction);
+    }
+}
 
-Console.WriteLine("Informe a potência em watts da lâmpada que será utilizada: ");
-int power = int.Parse(Console.ReadLine());
-
-//PROCESSAMENTO
-decimal squareMeter = width * length;
-decimal quotientX = power / 18M;
-decimal totalLightBulbs = squareMeter / quotientX;
-
-//SAIDA DE DADOS
-Console.WriteLine("Para iluminar o cômodo: " + convenient + " com " + squareMeter.ToString("N2") + " metros quadrados " + "será necessário a instalação de " + totalLightBulbs.ToString("N2") + " lâmpada(s)");
