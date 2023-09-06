@@ -1,21 +1,13 @@
-﻿namespace namespaceExample;
+﻿//esta variável será compilada como string
+var school = "Trybe";
 
-//Criando um enum
-enum CardinalPoints
-{
-    Norte,
-    Sul,
-    Leste,
-    Oeste
-};
+//esta variável será compilada como int
+var semester = 1;
 
-class Program
-{
-    public static void Main()
-    {
-        //Utilizando um enum
-        CardinalPoints direction = CardinalPoints.Norte;
-        Console.WriteLine("Ponto Cardeal: " + direction);
-    }
-}
+//esta variável será compilada como um tipo anônimo
+var student = new { name = "Jorge", age = 30 };
 
+Console.WriteLine("Olá! Me chamo " + student.name + " " +
+                  "sou um estudante da escola " + school + " " +
+                  "estou no " + semester + "º semestre " +
+                  "e tenho " + student.age + " anos");
