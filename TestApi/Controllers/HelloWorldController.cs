@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 
 namespace TestApi.Controllers;
 using Microsoft.AspNetCore.Mvc;

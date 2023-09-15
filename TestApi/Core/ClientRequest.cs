@@ -16,4 +16,12 @@ public class ClientRequest
             UpdatedAt = DateTime.Now
         };
     }
+
+    public Client UpdateClient(Client client)
+    {
+        client.Name = Name;
+        client.AccountBalance = AccountBalance;
+        client.UpdatedAt = DateTime.Now;
+        return client;
+    }
 }
