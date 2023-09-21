@@ -42,4 +42,11 @@ public class ClientController : ControllerBase
 
         return NoContent();
     }
+
+
+    [HttpGet]
+    public ActionResult List()
+    {
+        return StatusCode(200, _clients);
+    }
 }
