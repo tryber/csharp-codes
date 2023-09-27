@@ -8,7 +8,7 @@ public class ContactService : IContactService
     public ContactService()
     {
         _nextPersonId = 1;
-        _personList = new Person[5];
+        _personList = new Person[100];
     }
 
     public Person addPerson(Person person)
