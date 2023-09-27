@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="TestApi.Test" />
+      <InternalsVisibleTo Include="ContactList.Test" />
   </ItemGroup>
 
 </Project>
