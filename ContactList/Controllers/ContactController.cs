@@ -5,10 +5,10 @@ using ContactList.Models;
 
 [ApiController]
 [Route("person")]
-public class PersonController : ControllerBase
+public class ContactController : ControllerBase
 {
     protected IContactService _service;
-    public PersonController(IContactService service)
+    public ContactController(IContactService service)
     {
         _service = service;
     }
