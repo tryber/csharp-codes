@@ -2,8 +2,9 @@
 {
     public static void Main()
     {
-        int intResult = 5 / 2;
+        long someLongNumber = 516144066604654;
+        int intNumber = someLongNumber;
 
-        Console.WriteLine(intResult);
+        Console.WriteLine(intNumber);
     }
 }
