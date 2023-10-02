@@ -7,29 +7,43 @@
         int number = 0;
         var canConvert = Int32.TryParse(response, out number);
 
-        if (number > 0)
+        switch (number)
         {
-            Console.WriteLine("maior que zero");
-        }
-        else
-        {
-            if (number < 0)
-            {
-                Console.WriteLine("menor que zero");
-            }
-            else
-            {
+            case > 0:
+                Console.WriteLine("maior que 0");
+                break;
+            case 0:
                 Console.WriteLine("igual a zero");
-            }
+                break;
+            default:
+                Console.WriteLine("menor que zero");
+                break;
         }
 
-        if (number > 10)
-            Console.WriteLine("maior que 10");
-        else
-            Console.WriteLine("menor ou igual a 10");
+        Console.WriteLine(IdentifyPolygon(3));
+    }
 
-        if (number > 10) Console.WriteLine("maior que 10");
-        else Console.WriteLine("menor ou igual a 10");
-
+    public static string IdentifyPolygon(int sideCount)
+    {
+        var name = string.Empty;
+        switch (sideCount)
+        {
+            case < 3:
+                name = "Não é um polígono";
+                break;
+            case 3:
+                name = "Triângulo";
+                break;
+            case 4:
+                name = "Quadrado";
+                break;
+            case 5:
+                name = "Pentágono";
+                break;
+            default:
+                name = "Polígono não identificado";
+                break;
+        }
+        return name;
     }
 }
