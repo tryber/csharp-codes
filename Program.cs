@@ -2,18 +2,17 @@
 {
     public static void Main()
     {
-        string[] teachers = new string[] { "Joel", "Tess", "Marlene" };
-        string[] students = new string[] { "Ellie", "Joel", "Abby" };
-        foreach (var teacher in teachers)
-        {
-            Console.WriteLine("Professor: " + teacher + ". Estudante:");
-            foreach (var student in students)
-            {
-                if (teacher == student)
-                    break;
-                Console.WriteLine(student);
-            }
-        }
+        //Criando o array
+        int[] myFirstArray;
+
+        //instanciando array:
+        //array = new tipo[tamanhoDoArray];
+        myFirstArray = new int[5];
+
+        int[] myFirstArray1 = new int[] { 1, 2, 3, 4, 5 };
+        int[] myFirstArray2 = { 1, 2, 3, 4, 5 };
+        string[] myFirsStringArray1 = new string[] { "Vamo", "que", "vamo", "!" };
+        string[] myFirsStringArray2 = { "Vamo", "que", "vamo", "!" };
     }
 
 }
