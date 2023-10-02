@@ -2,9 +2,8 @@
 {
     public static void Main()
     {
-        int someIntNumber = 51;
-        long longNumberCast = someIntNumber;
+        int intResult = 5 / 2;
 
-        Console.WriteLine(longNumberCast);
+        Console.WriteLine(intResult);
     }
 }
