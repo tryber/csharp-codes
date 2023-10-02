@@ -2,9 +2,10 @@
 {
     public static void Main()
     {
-        for (int count = 0; count < 3; count++)
+        string[] names = new string[] { "Hulk", "Thor", "Loki" };
+        foreach (var name in names)
         {
-            Console.WriteLine("numero: " + count);
+            Console.WriteLine(name);
         }
     }
 
