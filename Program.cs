@@ -1,18 +1,15 @@
-﻿public class Program
+﻿class PlayingWithArrays
 {
-    public static void Main()
+    public static void muldiDimArrays()
     {
-        //Criando o array
-        int[] myFirstArray;
+        // Somente instanciamos o array mais externo neste primeiro passo
+        // Repare que apenas o primeiro colchetes contém números
+        int[][] jaggedArray = new int[4][];
 
-        //instanciando array:
-        //array = new tipo[tamanhoDoArray];
-        myFirstArray = new int[5];
-
-        int[] myFirstArray1 = new int[] { 1, 2, 3, 4, 5 };
-        int[] myFirstArray2 = { 1, 2, 3, 4, 5 };
-        string[] myFirsStringArray1 = new string[] { "Vamo", "que", "vamo", "!" };
-        string[] myFirsStringArray2 = { "Vamo", "que", "vamo", "!" };
+        // Agora precisamos instanciar um novo array para cada posição do array mais externo
+        jaggedArray[0] = new int[4] { 6, 6, 6, 6 };
+        jaggedArray[1] = new int[3] { 6, 6, 6 };
+        jaggedArray[2] = new int[5] { 6, 6, 6, 6, 6 };
+        jaggedArray[3] = new int[2] { 6, 6 };
     }
-
 }
