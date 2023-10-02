@@ -2,29 +2,22 @@
 {
     static void Main(string[] args)
     {
-        int[] expensesCost;
+        string[] chemicalProduct = new string[3];
 
-        int numberOfExpenses = getNumberOfExpenses();
-        expensesCost = new int[numberOfExpenses];
-        for (int i = 0; i < numberOfExpenses; i++)
+        try
         {
-            expensesCost[i] = getExpenseCostFromUser();
+            chemicalProduct[0] = "Cálcio";
+            chemicalProduct[1] = "Zinco";
+            chemicalProduct[2] = "Hidrazina";
+            chemicalProduct[3] = "Anilina";
         }
-    }
-
-    public static int getNumberOfExpenses()
-    {
-        Console.WriteLine("Entre com o número de despesas: ");
-        string entry = Console.ReadLine();
-        int convertInt = Convert.ToInt32(entry);
-        return convertInt;
-    }
-
-    public static int getExpenseCostFromUser()
-    {
-        Console.WriteLine("Entre com a despesa: ");
-        string entry = Console.ReadLine();
-        int convertInt = Convert.ToInt32(entry);
-        return convertInt;
+        catch (IndexOutOfRangeException ex)
+        {
+            Console.WriteLine("Erro Específico, sabemos exatamente o motivo do erro.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Temos a mensagem, porém é um pouco incerto o que ocorreu.");
+        }
     }
 }
