@@ -2,13 +2,10 @@
 {
     public static void Main()
     {
-        var count = 0;
-        do
+        for (int count = 0; count < 3; count++)
         {
-            Console.WriteLine("count " + count);
-            count++;
+            Console.WriteLine("numero: " + count);
         }
-        while (count < 10);
     }
 
 }
