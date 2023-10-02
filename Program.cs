@@ -2,22 +2,34 @@
 {
     public static void Main()
     {
-        Console.WriteLine("Informe o raio de um círculo (deve ser um número inteiro)");
+        Console.WriteLine("Informe um número inteiro");
         string? response = Console.ReadLine();
-        int radius = 0;
-        var canConvert = Int32.TryParse(response, out radius);
+        int number = 0;
+        var canConvert = Int32.TryParse(response, out number);
 
-        if (canConvert)
+        if (number > 0)
         {
-            const double pi = 3.14159;
-
-            double circumference = pi * (2 * radius);
-
-            Console.WriteLine("A circunferência de um circulo com raio " + radius + " é igual a " + circumference);
+            Console.WriteLine("maior que zero");
         }
         else
         {
-            Console.WriteLine("O texto digitado não é um número inteiro.");
+            if (number < 0)
+            {
+                Console.WriteLine("menor que zero");
+            }
+            else
+            {
+                Console.WriteLine("igual a zero");
+            }
         }
+
+        if (number > 10)
+            Console.WriteLine("maior que 10");
+        else
+            Console.WriteLine("menor ou igual a 10");
+
+        if (number > 10) Console.WriteLine("maior que 10");
+        else Console.WriteLine("menor ou igual a 10");
+
     }
 }
