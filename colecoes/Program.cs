@@ -3,13 +3,14 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        List<string> animals = new List<string>(){ "Cachorro", "Baleia", "Urso", "Tigre" };
+        string[] games = {"Fortnite", "Valorant", "Destiny", "Call of Duty", "World of Warcraft"};
 
-        // Ordenando os elementos da lista
-        animals.Sort();
-
-        animals.ForEach(animal => {
-            Console.WriteLine(animal);
-        });
+        IEnumerable<string> filteredGames = from game in games
+                                          where game.Contains('a')
+                                          select game;
+        foreach(var game in filteredGames)
+        {
+            Console.WriteLine(game);
+        }
     }
 }
