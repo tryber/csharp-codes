@@ -3,7 +3,13 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        List<int> integers = new List<int>(){ 18, 45, 29, 99 };
-        Console.WriteLine(integers.IndexOf(29));
+        List<string> animals = new List<string>(){ "Cachorro", "Baleia", "Urso", "Tigre" };
+
+        // Ordenando os elementos da lista
+        animals.Sort();
+
+        animals.ForEach(animal => {
+            Console.WriteLine(animal);
+        });
     }
 }
