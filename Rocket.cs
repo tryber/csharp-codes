@@ -1,12 +1,17 @@
 ﻿class Rocket
 {
-    string Name { get; set; }
-    int Fuel { get; set; } = 0;
-    decimal Price { get; set; }
+    int _fuel;
+    int _maxFuel = 5000;
 
-    public Rocket(string name, decimal price)
+    public int FuelAsPercentage
     {
-        Name = name;
-        Price = price;
+        get { return _fuel * 100 / _maxFuel; }
+        set
+        {
+            if (value > 100 || value < 0)
+                throw new ArgumentOutOfRangeException();
+
+            _fuel = (value * _maxFuel) / 100;
+        }
     }
 }
