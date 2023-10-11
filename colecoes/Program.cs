@@ -1,32 +1,32 @@
 ﻿namespace colecoes;
 
-internal class Artist
+internal class Book
 {
-    public string? name { get; set; }
-    public int listeners { get; set; }
+    public string? title { get; set; }
+    public int price { get; set; }
+    public int publishYear { get; set; }
 }
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        var artists = new List<Artist>
+        var books = new List<Book>
         {
-            new Artist { name = "Raul Seixas", listeners = 50000 },
-            new Artist { name = "Mozart", listeners = 15000 },
-            new Artist { name = "Elvis Presley", listeners = 25000 },
-            new Artist { name = "Bob Dylan", listeners = 30000 },
-            new Artist { name = "Guns N' Roses", listeners = 40000 },
+            new Book { title = "The Count of Monte Cristo", price = 39, publishYear = 2002 },
+            new Book { title = "Brave new World ", price = 32, publishYear = 1932 },
+            new Book { title = "The Hobbit", price = 35, publishYear = 2011 },
+            new Book { title = "Pan's Labyrinth: The Labyrinth of the Faun", price = 25, publishYear = 2019 },
+            new Book { title = "Throne of Glass", price = 29, publishYear = 2013 },
         };
 
-        var topListeners =
-               from artist in artists
-               where artist.listeners > 30000
-               select artist.name;
+        var booksAfter2000 = from book in books
+                           where book.price > 30
+                           select book.title;
 
-        foreach(var artist in topListeners)
+        foreach(var book in booksAfter2000)
         {
-            Console.WriteLine(artist);
+            Console.WriteLine(book);
         }
     }
 }
