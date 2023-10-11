@@ -1,9 +1,9 @@
 ﻿class Rocket
 {
-    string Name { get; set; }
+    string _name;
 
     public Rocket(string name)
     {
-        Name = name;
+        _name = name;
     }
 }
