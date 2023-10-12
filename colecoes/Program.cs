@@ -4,14 +4,21 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        string[] words = { "owner", "report", "warm", "scramble", "party" };
-
-        var objWords = from word in words
-                       select new { word, length = word.Length };
-
-        foreach (var objWord in objWords)
+        var games = new List<List<string>>
         {
-            Console.WriteLine(objWord.word + " - " + objWord.length);
+            new List<string> { "Valorant", "CS GO", "Battlefield" },
+            new List<string> { "Need For Speed", "The crew" },
+            new List<string> { "League of Legends", "Dota" }
+        };
+
+        var gamesInLine = from gameLine in games
+                          from game in gameLine
+                          select game;
+                
+        foreach(string game in gamesInLine)
+        {
+            Console.WriteLine(game);
         }
+
     }
 }
