@@ -4,10 +4,14 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        string[] greetings = { "Hello World", "Hello LINQ", "Hello Trybe" };
+        string[] words = { "owner", "report", "warm", "scramble", "party" };
 
-        var numberOfItems = greetings.Count();
-    
-        Console.WriteLine(numberOfItems);
+        var objWords = from word in words
+                       select new { word, length = word.Length };
+
+        foreach (var objWord in objWords)
+        {
+            Console.WriteLine(objWord.word + " - " + objWord.length);
+        }
     }
 }
