@@ -4,12 +4,11 @@ public class Program
     public static void Main(string[] args)
     {
        
-        List<string> stacksProjectA = new List<string> { "C#", "SQL Server", "JSON", "Microsserviços" };
-        List<string> stacksProjectB = new List<string> { "Java", "MySQL", "JSON", "WebAPI" };
+        List<string> stacksProject = new List<string> { "C#", "SQL Server", "JSON", "C#", "XML", "SQL Server", "Microsserviços", "Microsserviços" };
         
-        var stacksProjectsAexceptB = stacksProjectA.Except(stacksProjectB);
+        var stacksProjectDistinct = stacksProject.Distinct();
 
-        foreach (var stack in stacksProjectsAexceptB) {
+        foreach (var stack in stacksProjectDistinct) {
             Console.WriteLine(stack);
         }
     }
