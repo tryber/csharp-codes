@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "colecoes", "colecoes\colecoes.csproj", "{E7ECCC37-EC3F-44FC-8077-85E1821437B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "colecoes.test", "colecoes.test\colecoes.test.csproj", "{1DD2F67F-BE9E-48AB-9F9E-5C87F5A3E31A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E7ECCC37-EC3F-44FC-8077-85E1821437B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7ECCC37-EC3F-44FC-8077-85E1821437B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7ECCC37-EC3F-44FC-8077-85E1821437B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD2F67F-BE9E-48AB-9F9E-5C87F5A3E31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD2F67F-BE9E-48AB-9F9E-5C87F5A3E31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD2F67F-BE9E-48AB-9F9E-5C87F5A3E31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD2F67F-BE9E-48AB-9F9E-5C87F5A3E31A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
