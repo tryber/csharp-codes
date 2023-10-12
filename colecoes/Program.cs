@@ -35,23 +35,24 @@ public class Program
                 }}
         };
 
-         var carsSportOver5M = from categoryCar in categoryCars
-                        where categoryCar.Name == "Sport"
-                        select new {
-                            categoryCar.Name,
-                            Cars = from car in categoryCar.Cars 
-                                   where car.Price > 30000000
-                                   select car
-                            };
+         var carsByBrand =   from categoryCar in categoryCars
+                    from car in categoryCar.Cars
+                    select new {
+                        car.Brand,
+                        car.Model,
+                        car.Price,
+                        CategoryName = categoryCar.Name
+                    } into grupoA
+                    orderby grupoA.Price
+                    group grupoA by grupoA.Brand;
 
-        foreach (var carSportOver5M in carsSportOver5M)
+        foreach (var carByBrand in carsByBrand)
         {
-            Console.WriteLine("Categoria: " + carSportOver5M.Name);
-
-            foreach (var car in carSportOver5M.Cars)
+            Console.WriteLine(carByBrand.Key);
+            foreach (var car in carByBrand)
             {
-                Console.WriteLine($"\t {car.Brand} {car.Model} - Preço: R$ {car.Price}");
-            }
+                Console.WriteLine($"\t {car.Model} - {car.CategoryName} - Preço: R$ {car.Price}");
+            }   
         }
     }
 }
