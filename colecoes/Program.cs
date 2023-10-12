@@ -31,11 +31,11 @@ public class Program
             new Car { Brand = "Devel", Model = "Sixteen", Price = 79000020 }
         };
 
-        var carsFerrari = cars.Where(car => car.Brand == "Ferrari");
+        var carsOrderedByPrice = cars.OrderBy(car => car.Price);
 
-        foreach(var carFerrari in carsFerrari)
+        foreach(var carOrderedByPrice in carsOrderedByPrice)
         {
-            Console.WriteLine($"{carFerrari.Brand} {carFerrari.Model} - Preço: R$ {carFerrari.Price}");
+            Console.WriteLine($"{carOrderedByPrice.Brand} {carOrderedByPrice.Model} - Preço: R$ {carOrderedByPrice.Price}");
         }
 
     }
