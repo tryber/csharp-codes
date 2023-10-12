@@ -31,11 +31,11 @@ public class Program
             new Car { Brand = "Devel", Model = "Sixteen", Price = 79000020 }
         };
 
-        var carsName = cars.Select(car => car.Brand + " " + car.Model);
+        var carsFerrari = cars.Where(car => car.Brand == "Ferrari");
 
-        foreach(var carName in carsName)
+        foreach(var carFerrari in carsFerrari)
         {
-            Console.WriteLine(carName);
+            Console.WriteLine($"{carFerrari.Brand} {carFerrari.Model} - Preço: R$ {carFerrari.Price}");
         }
 
     }
