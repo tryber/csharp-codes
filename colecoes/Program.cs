@@ -7,6 +7,12 @@ public class Customer {
     public string? Password { get; set; }
 }
 
+public class CustomerBasicData {
+    public string? Name { get; set; }
+    public string? City { get; set;}
+    
+}
+
 public class Program
 {
     public static void Main(string[] args)
@@ -19,11 +25,11 @@ public class Program
         };
 
         var customersList = from customer in customers
-                            select customer;
+                            select new CustomerBasicData { Name = customer.Name, City = customer.City };
 
-        foreach(Customer customer in customersList)
+        foreach(CustomerBasicData customer in customersList)
         {
-            Console.WriteLine(customer.Name + " - City: " +customer.City + " - Password: " + customer.Password);
+            Console.WriteLine(customer.Name + " - City: " +customer.City);
         }
     }
 }
