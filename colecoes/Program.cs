@@ -31,11 +31,15 @@ public class Program
             new Car { Brand = "Devel", Model = "Sixteen", Price = 79000020 }
         };
 
-        var carsOrderedByPrice = cars.OrderBy(car => car.Price);
+        var carsByBrand = cars.GroupBy(car => car.Brand);
 
-        foreach(var carOrderedByPrice in carsOrderedByPrice)
+        foreach (var carByBrand in carsByBrand)
         {
-            Console.WriteLine($"{carOrderedByPrice.Brand} {carOrderedByPrice.Model} - Preço: R$ {carOrderedByPrice.Price}");
+            Console.WriteLine(carByBrand.Key);
+            foreach (var car in carByBrand)
+            {
+                Console.WriteLine($"\t {car.Model} - Preço: {car.Price}");
+            }
         }
 
     }
