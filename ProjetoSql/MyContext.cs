@@ -9,6 +9,8 @@ public class MyContext : DbContext
             : base(options)
     {}
 
+    public DbSet<Student> Students { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // Verificamos se o banco de dados já foi configurado
