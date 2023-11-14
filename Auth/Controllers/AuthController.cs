@@ -21,7 +21,7 @@ public class AuthController : Controller
         try
         {
             userViewModel.User = new UserRepository().Get(user);
-            //Console.WriteLine(userViewModel.User.Name + "bbbbbbbbb");
+            
             if (userViewModel.User == null)
             {                
                 return NotFound("User not found!");
