@@ -3,6 +3,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using Newtonsoft.Json;
 using Notification.Service.Models;
+using Notification.Service.Service;
 
 namespace Notification.Service
 {
@@ -34,7 +35,15 @@ namespace Notification.Service
                 {
                     var body = ea.Body.ToArray();
                     Message message = JsonConvert.DeserializeObject<Message>(Encoding.UTF8.GetString(body));
-                   Console.WriteLine("New e-mail - Subsject: " + message.Title + " - " + message.MailTo);
+                    try
+                    {
+                        EmailService.Send(message);
+                        Console.WriteLine("Mail sent");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Mail failed");
+                    }
 
                 };
                 channel.BasicConsume(queue: "notification",
