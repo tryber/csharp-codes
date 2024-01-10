@@ -18,7 +18,8 @@ namespace Notification.Service
             try
             {
 
-                var factory = new ConnectionFactory { HostName = "localhost" };
+                var MessageBrokerHost =  Environment.GetEnvironmentVariable("MESSAGE_BROKER_HOST");
+                var factory = new ConnectionFactory { HostName = MessageBrokerHost };
                 using var connection = factory.CreateConnection();
                 using var channel = connection.CreateModel();
 

@@ -9,7 +9,8 @@ public class NotificationService : INotificationService
 {
     public void Send(Message message)
     {
-        var _factory = new ConnectionFactory { HostName = "localhost" };
+        var messageBrokerHost = Environment.GetEnvironmentVariable("MESSAGE_BROKER_HOST");
+        var _factory = new ConnectionFactory { HostName = messageBrokerHost };
         using var connection = _factory.CreateConnection();
         using var channel = connection.CreateModel();
         {

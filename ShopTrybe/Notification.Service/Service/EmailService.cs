@@ -6,10 +6,10 @@ using Notification.Service.Models;
 
 public class EmailService : MailMessage
 {
+    private static readonly string EMAIL_HOST = Environment.GetEnvironmentVariable("EMAIL_HOST");
+    private static readonly string EMAIL_FROM = Environment.GetEnvironmentVariable("EMAIL_FROM");
+    private static readonly string EMAIL_PASSWORD = Environment.GetEnvironmentVariable("EMAIL_PASSWORD");
 
-    private static readonly string EMAIL_HOST = "smtp.gmail.com";
-    private static readonly string EMAIL_FROM = "seu.email@gmail.com";
-    private static readonly string EMAIL_PASSWORD = "xxxx xxxx xxxx xxxx";
 
     public static void Send(Message message)
     {
@@ -29,7 +29,7 @@ public class EmailService : MailMessage
                 using (var smtpClient = new SmtpClient())
                 {
                     smtpClient.Host = EMAIL_HOST;
-                    smtpClient.Port = 587;
+                    smtpClient.Port = Int32.Parse(Environment.GetEnvironmentVariable("EMAIL_PORT"));
                     smtpClient.EnableSsl = true;
                     smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtpClient.Credentials = new NetworkCredential(EMAIL_FROM, EMAIL_PASSWORD);
