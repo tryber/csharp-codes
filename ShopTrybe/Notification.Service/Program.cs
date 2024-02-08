@@ -5,6 +5,10 @@ using Newtonsoft.Json;
 using Notification.Service.Models;
 using Notification.Service.Service;
 
+using Serilog;
+using Serilog.Events;
+using Notification.Service.Utils;
+
 namespace Notification.Service
 {
     public class Program
@@ -13,7 +17,7 @@ namespace Notification.Service
 
         public static void Main(string[] args)
         {
-
+            LogService.ConfigureLogger();
         Inicio:
             try
             {
@@ -39,6 +43,7 @@ namespace Notification.Service
                     try
                     {
                         EmailService.Send(message);
+                        Log.Information("Mail Sent");
                         Console.WriteLine("Mail sent");
                     }
                     catch (Exception ex)
