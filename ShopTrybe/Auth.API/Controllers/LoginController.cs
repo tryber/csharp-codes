@@ -14,10 +14,12 @@ public class LoginController : Controller
 {
      private readonly IUserRepository _repository;
      private readonly INotificationService _notificationService;
-     public LoginController(IUserRepository repository, INotificationService notificationService)
+     private readonly ILogger<LoginController> _logger;
+     public LoginController(IUserRepository repository, INotificationService notificationService, ILogger<LoginController> logger)
      {
         _repository = repository;
         _notificationService = notificationService;
+        _logger = logger;
      }
 
      [HttpPost]
@@ -39,9 +41,11 @@ public class LoginController : Controller
                     MailTo = user.Email
                 };
                 _notificationService.Send(message);
+                _logger.LogInformation("New login request");
                 return Ok(new { token = AuthService.GenerateToken(userLogged)});
             }
             catch (Exception ex) {
+                _logger.LogError(message: ex.Message.ToString(), ex);
                 return BadRequest( new { message = ex.Message.ToString() });
             }
             
