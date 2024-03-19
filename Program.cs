@@ -1,7 +1,8 @@
-var rocket1 = new Rocket();
-var rocket2 = rocket1;
 
-rocket1.Name = "Apollo 11";
-rocket2.Name = "Falcon 9";
+var client1 = new Client();
+var client2 = client1;
 
-Console.WriteLine(rocket1.Name);
+client1.Name = "Maria Silva";
+client2.Name = "José Ferreira";
+
+Console.WriteLine(client1.Name);
