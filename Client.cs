@@ -1,8 +1,8 @@
-﻿class Rocket
+﻿class Client
 {
     string Name { get; set; }
 
-    public Rocket(string name)
+    public Client(string name)
     {
         Name = name;
     }
