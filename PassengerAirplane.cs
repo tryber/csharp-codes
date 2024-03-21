@@ -19,7 +19,7 @@ public class PassengerAirplane : Airplane
 
     public override double CalculateCost()
     {
-        return 0;
+        return CalculateStandardCost() + 90 * PassengerQuantity;
     }
 
 }

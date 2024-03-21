@@ -18,7 +18,7 @@ public class CargoAirplane : Airplane
 
     public override double CalculateCost()
     {
-        return 0;
+        return CalculateStandardCost() + 35 * LoadedWeight;
     }
 
 }
