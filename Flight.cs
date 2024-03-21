@@ -4,7 +4,7 @@ public class Flight
 {
     public string FlightId { get; set; }
     public double Distance;
-    public Airplane Airplane { get; set; }
+    public IAirplane Airplane { get; set; }
 
     public Flight(string FlightId, double Distance)
     {

@@ -10,10 +10,15 @@ public class CargoAirplane : Airplane
         this.Payload = Payload;
     }
 
-    public void Load(double weight)
+    public override void Load(double weight)
     {
         if ((LoadedWeight + weight) > Payload) throw new ArgumentException("Payload achieved");
         LoadedWeight += weight;
+    }
+
+    public override double CalculateCost()
+    {
+        return 0;
     }
 
 }
