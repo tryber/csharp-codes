@@ -16,8 +16,6 @@ public class MainClass
         flightA.Load();
         flightB.Load();
 
-        embraer.Load();
-
         Console.WriteLine(flightA.Airplane.Prefix + " - " + flightA.CalculateCost().ToString());
     }
 }

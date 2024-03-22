@@ -33,17 +33,19 @@ public class Flight
     {
         if (_Airplane is null) throw new InvalidDataException("Airplane not defined");
         if (_FlightType == "Cargo") throw new ArgumentException("Cargo flights must specify a load weight");
-        _Airplane.Load();
+        IPassengerAirplane myAirplane = (IPassengerAirplane) _Airplane;
+        myAirplane.Load();
     }
 
     public void Load(double weight)
     {
         if (_Airplane is null) throw new InvalidDataException("Airplane not defined");
         if (_FlightType == "Commercial") throw new ArgumentException("Commercial flights must not specify a load");
-        _Airplane.Load(weight);
+        ICargoAirplane myAirplane = (ICargoAirplane) _Airplane;
+        myAirplane.Load(weight);
     }
 
-     public double CalculateCost()
+    public double CalculateCost()
     {
         if (_Airplane is null) throw new InvalidDataException("Airplane not defined");
         return 20 * Distance + _Airplane!.CalculateCost();
