@@ -1,6 +1,6 @@
 namespace Airline;
 
-public class PassengerAirplane : Airplane
+public class PassengerAirplane : Airplane, IPassengerAirplane
 {
     private int PassengerCapacity { get; set; }
     private int PassengerQuantity = 0;
