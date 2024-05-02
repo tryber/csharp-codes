@@ -25,4 +25,29 @@ public class CondominiumController : ControllerBase
     {
         return Created("", _useCase.Add(condominium));
     }
+
+    [HttpGet("{id:int}")]
+    public IActionResult GetById(int id)
+    {
+        return Ok(_useCase.GetById(id));
+    }
+
+    [HttpPut("{id:int}")]
+    public IActionResult Put(int id, [FromBody] Condominium condominium)
+    {
+        return Ok(_useCase.Update(id, condominium));
+    }
+
+    [HttpDelete("{id:int}")]
+    public IActionResult Delete(int id)
+    {
+        _useCase.Delete(id);
+        return NoContent();
+    }
+
+
+
+
+
+
 }

@@ -19,8 +19,39 @@ public class CondominiumRepository : ICondominiumRepository
         return condominium;
     }
 
+
+
     public IEnumerable<Condominium> Get()
     {
         return _context.Condominiums;
+    }
+
+    public Condominium GetById(int Id)
+    {
+        Condominium? existingCondominium = _context.Condominiums.Find(Id);
+        if (existingCondominium == null) throw new Exception("Condominium not found");
+        return existingCondominium;
+    }
+
+    public Condominium Update(int Id, Condominium condominium)
+    {
+        Condominium? existingCondominium = _context.Condominiums.Find(Id);
+        if (existingCondominium == null) throw new Exception("Condominium not found");
+        
+        condominium.Id = Id;
+        _context.Entry(existingCondominium).CurrentValues.SetValues(condominium);
+        _context.Condominiums.Update(existingCondominium);
+        _context.SaveChanges();
+        return existingCondominium;
+
+    }
+
+    public void Delete(int Id)
+    {
+        Condominium? existingCondominium = _context.Condominiums.Find(Id);
+        if (existingCondominium == null) throw new Exception("Condominium not found");
+
+        _context.Condominiums.Remove(existingCondominium);
+        _context.SaveChanges();
     }
 }

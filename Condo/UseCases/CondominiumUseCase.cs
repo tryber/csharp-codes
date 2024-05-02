@@ -19,4 +19,19 @@ public class CondominiumUseCase : ICondominiumUseCase
     {
         return _repository.Add(condominium);
     }
+
+    public Condominium GetById(int Id)
+    {
+        return _repository.GetById(Id);
+    }
+
+    public Condominium Update(int Id, Condominium condominium)
+    {
+        return _repository.Update(Id, condominium);
+    }
+
+    public void Delete(int Id)
+    {
+        _repository.Delete(Id);
+    }
 }
