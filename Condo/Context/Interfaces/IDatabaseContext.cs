@@ -7,6 +7,9 @@ namespace Condo.Context.Interfaces;
 public interface IDatabaseContext
 {
     public DbSet<Condominium> Condominiums { get; set; }
+    public DbSet<Unity> Unities { get; set; }
+    public DbSet<Resident> Residents { get; set; }
+    public DbSet<Person> Person { get; set; }
     public int SaveChanges();
     public EntityEntry Entry(object entity);
 
