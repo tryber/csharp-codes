@@ -20,6 +20,9 @@ builder.Services.AddScoped<ICondominiumRepository, CondominiumRepository>();
 builder.Services.AddScoped<ICondominiumUseCase, CondominiumUseCase>();
 builder.Services.AddScoped<IUnityRepository, UnityRepository>();
 builder.Services.AddScoped<IUnityUseCase, UnityUseCase>();
+builder.Services.AddScoped<IResidentUseCase, ResidentUseCase>();
+builder.Services.AddScoped<IResidentRepository, ResidentRepository>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 var app = builder.Build();

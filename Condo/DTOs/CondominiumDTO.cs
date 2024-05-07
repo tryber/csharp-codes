@@ -10,3 +10,10 @@ public class CondominiumResponseDTO
     public double PropertyTax { get; set; }
     public List<UnityResponseDTO>? Units { get; set; }
 }
+
+public class CondominiumResidentResponseDTO
+{
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public CondoType Type { get; set; }
+}
