@@ -1,6 +1,7 @@
 using Condo.Context.Interfaces;
 using Condo.Models;
 using Condo.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Condo.Repository;
 
@@ -23,12 +24,14 @@ public class CondominiumRepository : ICondominiumRepository
 
     public IEnumerable<Condominium> Get()
     {
-        return _context.Condominiums;
+        return _context.Condominiums.Include(c => c.Units);
     }
 
     public Condominium GetById(int Id)
     {
-        Condominium? existingCondominium = _context.Condominiums.Find(Id);
+        Condominium? existingCondominium = _context.Condominiums
+                                                    .Include(c => c.Units)
+                                                    .FirstOrDefault(c => c.Id == Id);
         if (existingCondominium == null) throw new Exception("Condominium not found");
         return existingCondominium;
     }

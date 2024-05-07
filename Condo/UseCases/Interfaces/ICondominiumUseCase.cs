@@ -1,12 +1,13 @@
+using Condo.DTOs;
 using Condo.Models;
 
 namespace Condo.UseCases.Interfaces;
 
 public interface ICondominiumUseCase
 {
-    IEnumerable<Condominium> Get();
+    IEnumerable<CondominiumResponseDTO> Get();
     Condominium Add(Condominium condominium);
-    Condominium GetById(int Id);
+    CondominiumResponseDTO GetById(int Id);
     Condominium Update(int Id, Condominium condominium);
     void Delete(int Id);
 }

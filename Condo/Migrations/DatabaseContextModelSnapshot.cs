@@ -42,6 +42,114 @@ namespace Condo.Migrations
 
                     b.ToTable("Condominiums");
                 });
+
+            modelBuilder.Entity("Condo.Models.Person", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Document")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Person");
+                });
+
+            modelBuilder.Entity("Condo.Models.Resident", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UnityId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
+
+                    b.HasIndex("UnityId");
+
+                    b.ToTable("Residents");
+                });
+
+            modelBuilder.Entity("Condo.Models.Unity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CondominiumId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CondominiumId");
+
+                    b.ToTable("Unities");
+                });
+
+            modelBuilder.Entity("Condo.Models.Resident", b =>
+                {
+                    b.HasOne("Condo.Models.Person", "Person")
+                        .WithMany("Residents")
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Condo.Models.Unity", "Unity")
+                        .WithMany("Residents")
+                        .HasForeignKey("UnityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+
+                    b.Navigation("Unity");
+                });
+
+            modelBuilder.Entity("Condo.Models.Unity", b =>
+                {
+                    b.HasOne("Condo.Models.Condominium", "Condominium")
+                        .WithMany("Units")
+                        .HasForeignKey("CondominiumId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Condominium");
+                });
+
+            modelBuilder.Entity("Condo.Models.Condominium", b =>
+                {
+                    b.Navigation("Units");
+                });
+
+            modelBuilder.Entity("Condo.Models.Person", b =>
+                {
+                    b.Navigation("Residents");
+                });
+
+            modelBuilder.Entity("Condo.Models.Unity", b =>
+                {
+                    b.Navigation("Residents");
+                });
 #pragma warning restore 612, 618
         }
     }
