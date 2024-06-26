@@ -23,6 +23,8 @@ public class CondominiumController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(Policy = "Administrator")]
     public IActionResult Post([FromBody] Condominium condominium)
     {
         return Created("", _useCase.Add(condominium));

@@ -27,7 +27,6 @@ public class CreateUser : ICreateUser
         User? existingUser = _userRepository.GetByEmail(userCreateDTO.Email!);
         if (existingUser != null) throw new BadRequestException("User already exists");
         
-
         Person newPerson = new Person {
             Name = userCreateDTO.Name,
             Document = userCreateDTO.Document

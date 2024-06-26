@@ -5,6 +5,12 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Condo", "Condo\Condo.csproj", "{82D7C556-06F1-49A7-9DFF-42F388E39D48}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6B2B7CDF-B92A-43A8-8DA5-A639316B3ADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condo.UnitTest", "tests\Condo.UnitTest\Condo.UnitTest.csproj", "{FA70BDE5-EBF4-4E00-9702-F09C6B3D63FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condo.IntegrationTest", "tests\Condo.IntegrationTest\Condo.IntegrationTest.csproj", "{FD72F330-CFF6-469D-9CF7-E9B38A666ED8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +21,23 @@ Global
 		{82D7C556-06F1-49A7-9DFF-42F388E39D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82D7C556-06F1-49A7-9DFF-42F388E39D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82D7C556-06F1-49A7-9DFF-42F388E39D48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA70BDE5-EBF4-4E00-9702-F09C6B3D63FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA70BDE5-EBF4-4E00-9702-F09C6B3D63FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA70BDE5-EBF4-4E00-9702-F09C6B3D63FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA70BDE5-EBF4-4E00-9702-F09C6B3D63FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD72F330-CFF6-469D-9CF7-E9B38A666ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD72F330-CFF6-469D-9CF7-E9B38A666ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD72F330-CFF6-469D-9CF7-E9B38A666ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD72F330-CFF6-469D-9CF7-E9B38A666ED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {34194A8E-B00B-4478-AB99-03861410CAFE}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA70BDE5-EBF4-4E00-9702-F09C6B3D63FE} = {6B2B7CDF-B92A-43A8-8DA5-A639316B3ADC}
+		{FD72F330-CFF6-469D-9CF7-E9B38A666ED8} = {6B2B7CDF-B92A-43A8-8DA5-A639316B3ADC}
 	EndGlobalSection
 EndGlobal
